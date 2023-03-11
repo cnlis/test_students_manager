@@ -1,0 +1,210 @@
+[
+{
+  "model": "students.student",
+  "pk": 1,
+  "fields": {
+    "sex": "M",
+    "first_name": "Петр",
+    "last_name": "Петров",
+    "middle_name": "Петрович",
+    "department": 3
+  }
+},
+{
+  "model": "students.student",
+  "pk": 2,
+  "fields": {
+    "sex": "M",
+    "first_name": "Иван",
+    "last_name": "Иванов",
+    "middle_name": "Иванович",
+    "department": 5
+  }
+},
+{
+  "model": "students.student",
+  "pk": 4,
+  "fields": {
+    "sex": "F",
+    "first_name": "Светлана",
+    "last_name": "Спиридонов",
+    "middle_name": "Спиридоновна",
+    "department": 3
+  }
+},
+{
+  "model": "students.student",
+  "pk": 5,
+  "fields": {
+    "sex": "M",
+    "first_name": "Михаил",
+    "last_name": "Михайлов",
+    "middle_name": "Михайлович",
+    "department": 3
+  }
+},
+{
+  "model": "students.student",
+  "pk": 6,
+  "fields": {
+    "sex": "M",
+    "first_name": "Спиридон",
+    "last_name": "Спиридонов",
+    "middle_name": "Спиридонович",
+    "department": 3
+  }
+},
+{
+  "model": "students.student",
+  "pk": 7,
+  "fields": {
+    "sex": "M",
+    "first_name": "Алексей",
+    "last_name": "Алексеев",
+    "middle_name": "Алексеевич",
+    "department": 3
+  }
+},
+{
+  "model": "students.student",
+  "pk": 8,
+  "fields": {
+    "sex": "F",
+    "first_name": "Анастасия",
+    "last_name": "Алексеева",
+    "middle_name": "Алексеевна",
+    "department": 5
+  }
+},
+{
+  "model": "students.student",
+  "pk": 9,
+  "fields": {
+    "sex": "F",
+    "first_name": "Ирина",
+    "last_name": "Иванова",
+    "middle_name": "Ивановна",
+    "department": 3
+  }
+},
+{
+  "model": "students.student",
+  "pk": 10,
+  "fields": {
+    "sex": "F",
+    "first_name": "Мария",
+    "last_name": "Михайлова",
+    "middle_name": "Михайловна",
+    "department": 5
+  }
+},
+{
+  "model": "students.student",
+  "pk": 11,
+  "fields": {
+    "sex": "M",
+    "first_name": "Полина",
+    "last_name": "Петрова",
+    "middle_name": "Петровна",
+    "department": 5
+  }
+},
+{
+  "model": "students.student",
+  "pk": 12,
+  "fields": {
+    "sex": "M",
+    "first_name": "Дмитрий",
+    "last_name": "Дмитриев",
+    "middle_name": "Дмитриевич",
+    "department": 3
+  }
+},
+{
+  "model": "students.student",
+  "pk": 13,
+  "fields": {
+    "sex": "F",
+    "first_name": "Дарья",
+    "last_name": "Дмитриева",
+    "middle_name": "Дмитриевна",
+    "department": 3
+  }
+},
+{
+  "model": "students.teacher",
+  "pk": 1,
+  "fields": {
+    "sex": "F",
+    "first_name": "Ирина",
+    "last_name": "Корабель",
+    "middle_name": "Владимировна"
+  }
+},
+{
+  "model": "students.teacher",
+  "pk": 2,
+  "fields": {
+    "sex": "M",
+    "first_name": "Олег",
+    "last_name": "Мельниченко",
+    "middle_name": "Викторович"
+  }
+},
+{
+  "model": "students.teacher",
+  "pk": 3,
+  "fields": {
+    "sex": "M",
+    "first_name": "Леонид",
+    "last_name": "Астраханцев",
+    "middle_name": "Алексеевич"
+  }
+},
+{
+  "model": "students.teacher",
+  "pk": 4,
+  "fields": {
+    "sex": "F",
+    "first_name": "Евгения",
+    "last_name": "Милованова",
+    "middle_name": "Алексеевна"
+  }
+},
+{
+  "model": "students.teacher",
+  "pk": 5,
+  "fields": {
+    "sex": "F",
+    "first_name": "Наталья",
+    "last_name": "Рябченок",
+    "middle_name": "Леонидовна"
+  }
+},
+{
+  "model": "students.department",
+  "pk": 3,
+  "fields": {
+    "name": "Электроподвижной состав",
+    "teachers": [
+      3,
+      2,
+      4,
+      5
+    ]
+  }
+},
+{
+  "model": "students.department",
+  "pk": 5,
+  "fields": {
+    "name": "Вагоны и вагонное хозяйство",
+    "teachers": [
+      3,
+      1,
+      2,
+      4
+    ]
+  }
+}
+]
