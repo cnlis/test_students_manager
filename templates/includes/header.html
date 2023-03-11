@@ -1,0 +1,50 @@
+{% load static %}
+<header>
+  <nav class="navbar navbar-expand-lg navbar-light" 
+    style="background-color: lightskyblue"
+  >
+    <div class="container">
+      <a class="navbar-brand" href="{% url 'students:student_list' %}">
+        <img src="{% static 'img/logo.png' %}" 
+          width="30" height="30" class="d-inline-block align-top" alt="">
+        Менеджер студентов</a>
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+        data-bs-target="#navbarContent" area-controls="navbarContent" 
+        area-exppended="false"
+      >
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      {% with request.resolver_match.view_name as view_name %}
+      <div class="collapse navbar-collapse" id="navbarContent">
+        <ul class="nav navbar-nav nav-pills">
+          <li class="nav-item">
+            <a class="nav-link
+              {% if view_name  == 'students:student_list' %}active{% endif %}"
+              href="{% url 'students:student_list' %}"
+            >
+              Студенты
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link
+              {% if view_name  == 'students:teacher_list' %}active{% endif %}"
+              href="{% url 'students:teacher_list' %}"
+            >
+              Преподаватели
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link
+              {% if view_name  == 'students:department_list' %}active{% endif %}"
+              href="{% url 'students:department_list' %}"
+            >
+              Кафедры
+            </a>
+          </li>
+        </ul>
+      </div><!-- navbar -->
+      {% endwith %}
+    </div><!-- container -->
+  </nav>
+</header>
