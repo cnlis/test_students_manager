@@ -1,12 +1,11 @@
 from django.shortcuts import get_object_or_404, redirect
 from django.urls import reverse
+from django.utils.translation import gettext_lazy as _
 from django.views.generic import ListView
 from django.views.generic.edit import CreateView, UpdateView
 
-from students.forms import StudentForm, DepartmentForm, TeacherForm
-from students.models import Student, Department, Teacher
-
-from django.utils.translation import gettext_lazy as _
+from students.forms import DepartmentForm, StudentForm, TeacherForm
+from students.models import Department, Student, Teacher
 
 
 class StudentList(ListView):
@@ -14,6 +13,9 @@ class StudentList(ListView):
     ordering = ['last_name', 'first_name', 'middle_name']
     paginate_by = 10
     context_object_name = 'students'
+
+    def get_queryset(self):
+        return Student.objects.select_related('department').all()
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
@@ -62,6 +64,9 @@ class DepartmentList(ListView):
     ordering = ['name']
     paginate_by = 10
     context_object_name = 'departments'
+
+    def get_queryset(self):
+        return Department.objects.prefetch_related('teachers').all()
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
@@ -112,6 +117,9 @@ class TeacherList(ListView):
     ordering = ['last_name', 'first_name', 'middle_name']
     paginate_by = 10
     context_object_name = 'teachers'
+
+    def get_queryset(self):
+        return Teacher.objects.prefetch_related('departments').all()
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)

@@ -62,6 +62,7 @@ class Department(models.Model):
     class Meta:
         verbose_name = _('кафедра')
         verbose_name_plural = _('кафедры')
+        ordering = ['name']
 
     def __str__(self):
         return self.name

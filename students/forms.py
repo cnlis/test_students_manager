@@ -1,12 +1,9 @@
 from django import forms
 from django.core.exceptions import NON_FIELD_ERRORS
+from django.utils.translation import gettext_lazy as _
 from django_select2 import forms as s2forms
 
-from app import settings
-from students.models import Student, Department, Teacher
-
-from django.utils.translation import gettext_lazy as _
-
+from students.models import Department, Student, Teacher
 
 UNIQUE_NAME_STR = _('Фамилия, имя и отчество должны быть уникальны!')
 
@@ -29,8 +26,6 @@ class StudentForm(forms.ModelForm):
                 cleaned_data.get('first_name') +
                 cleaned_data.get('middle_name')
         )
-        print(settings.STATIC_ROOT)
-        print(settings.STATIC_URL)
         if not data.replace('-', '').isalpha():
             self.add_error(
                 field='last_name',
